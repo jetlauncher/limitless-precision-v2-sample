@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101d38">
+<meta name="description" content="เรียน AI มาแล้ว แต่วันจันทร์ยังใช้ไม่ได้? 2 วัน Onsite สร้างพนักงาน AI จากงานจริงของบริษัทคุณกับ Limitless Club">
+<meta name="robots" content="noindex,nofollow">
+<title>Limitless Club — SAMPLE · Revised Copy</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="https://limitless-precision-preview.vercel.app/assets/precision-hero.webp" as="image" fetchpriority="high">
+<style>
+:root{
+  --ivory:#f6f3ec;--paper:#fcfaf5;--navy:#101d38;--ink:#17202d;
+  --gold:#a78b52;--gold-dark:#786036;--line:#d8d2c7;--muted:#62676c;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Noto Sans Thai",Arial,sans-serif;
+  color:var(--ink);background:var(--ivory);
+  font-family:var(--sans);font-size:16px;scroll-behavior:smooth;scroll-padding-top:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:none;color:inherit}
+.page-width{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+@media(min-width:900px){.page-width{width:min(1120px,calc(100% - 96px))}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.skip-link{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 16px;z-index:100}
+.skip-link:focus{left:8px}
+.eyebrow{margin:0 0 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);font-weight:500}
+.gold-dash{display:inline-block;width:22px;height:1px;background:var(--gold);vertical-align:middle;margin-right:8px}
+h1,h2,h3{font-weight:500;line-height:1.25;margin:0}
+h1{font-family:var(--serif);font-size:clamp(2rem,5.2vw,3.35rem);color:var(--navy);letter-spacing:-.01em}
+h2{font-family:var(--serif);font-size:clamp(1.65rem,3.6vw,2.45rem);color:var(--navy)}
+h3{font-size:1.05rem;color:var(--navy)}
+p{margin:0;line-height:1.7;color:var(--ink)}
+.muted{color:var(--muted)}
+.section{padding:72px 0}
+.section-heading{display:grid;gap:16px;margin-bottom:36px}
+@media(min-width:800px){.section-heading{grid-template-columns:1.2fr .8fr;align-items:end;gap:40px}}
+.section-heading p{color:var(--muted)}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(246,243,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;width:min(1120px,calc(100% - 40px));margin-inline:auto}
+.wordmark{font-family:var(--serif);font-size:18px;letter-spacing:.08em;color:var(--navy);line-height:1.1}
+.wordmark span{color:var(--gold-dark)}
+.wordmark small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.16em;color:var(--muted);margin-top:3px}
+.desktop-nav{display:none;gap:22px;font-size:13px;color:var(--muted)}
+.desktop-nav a:hover{color:var(--navy)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.nav-line{font-size:13px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.menu-toggle{width:40px;height:40px;display:grid;place-content:center;gap:5px}
+.menu-toggle span{display:block;width:18px;height:1.5px;background:var(--navy)}
+.mobile-nav{display:none;flex-direction:column;gap:14px;padding:8px 20px 18px;border-top:1px solid var(--line);background:var(--ivory)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:14px;color:var(--navy)}
+@media(min-width:880px){
+  .desktop-nav{display:flex}
+  .menu-toggle{display:none}
+  .mobile-nav,.mobile-nav.open{display:none}
+}
+
+/* Buttons */
+.button{min-height:52px;padding:14px 22px;display:inline-flex;gap:14px;align-items:center;justify-content:space-between;font-size:13px;font-weight:500;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.button.primary{background:var(--navy);color:#fff}
+.button.primary:hover{background:#1a2d52}
+.button.outline{border-color:var(--navy);color:var(--navy);background:transparent}
+.button.outline:hover{background:var(--navy);color:#fff}
+.button.light{background:#fff;color:var(--navy)}
+.button.light:hover{background:var(--ivory)}
+.text-link{font-size:13px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px;display:inline-flex;align-items:center;gap:6px}
+
+/* Hero */
+.hero{padding:36px 0 48px;border-bottom:1px solid var(--line)}
+.hero-main{display:grid;gap:36px}
+@media(min-width:960px){.hero-main{grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}}
+.hero-copy h1{margin-bottom:16px}
+.hero-sub{font-size:15px;line-height:1.75;color:var(--ink);margin-bottom:22px;max-width:36em}
+.proof-strip{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:14px 0;margin-bottom:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.proof-strip strong{color:var(--navy);font-weight:500}
+.proof-faces{display:flex;align-items:center}
+.proof-faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--ivory);margin-left:-8px;background:var(--line)}
+.proof-faces img:first-child{margin-left:0}
+.benefit-list{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px}
+.benefit-list li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.55}
+.benefit-list li::before{content:"";width:8px;height:8px;margin-top:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(167,139,82,.18)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-bottom:14px}
+.price-chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--navy);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+.price-chip em{font-style:normal;color:var(--gold-dark);font-weight:600}
+.hero-art{position:relative}
+.art-stage{background:linear-gradient(160deg,#1c2a4a,#101d38 55%,#0c1528);overflow:hidden;aspect-ratio:3/2}
+.art-stage img{width:100%;height:100%;object-fit:cover;opacity:.95}
+.art-caption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:var(--serif)}
+.sample-badge{position:absolute;top:12px;left:12px;background:rgba(16,29,56,.88);color:#fff;font-size:10px;letter-spacing:.12em;padding:6px 10px;text-transform:uppercase}
+
+/* Classroom / proof */
+.room-intro figure{margin:0;background:#fff;border:1px solid var(--line)}
+.room-intro img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.room-intro figcaption{padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.room-intro figcaption span{color:var(--ink);letter-spacing:0;text-transform:none;font-size:13px}
+.room-heading{margin-bottom:28px;max-width:34em}
+.room-heading h2{margin-bottom:12px}
+.room-heading p{color:var(--muted)}
+
+/* Monday compare */
+.compare-section{background:#fff;border-block:1px solid var(--line)}
+.compare-table{border:1px solid var(--line)}
+.compare-row{display:grid;gap:0;border-bottom:1px solid var(--line)}
+.compare-row:last-child{border-bottom:0}
+@media(min-width:760px){.compare-row{grid-template-columns:1fr 1fr}}
+.compare-cell{padding:22px 20px}
+.compare-cell.before{background:#faf8f3;border-bottom:1px solid var(--line)}
+@media(min-width:760px){.compare-cell.before{border-bottom:0;border-right:1px solid var(--line)}}
+.compare-cell.after{background:#fff}
+.compare-label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.compare-cell.after .compare-label{color:var(--gold-dark)}
+.compare-cell strong{display:block;margin-bottom:6px;font-size:15px;color:var(--navy)}
+.compare-cell p{font-size:13.5px;color:var(--muted)}
+.compare-head{display:none}
+@media(min-width:760px){
+  .compare-head{display:grid;grid-template-columns:1fr 1fr;background:var(--navy);color:#fff}
+  .compare-head div{padding:14px 20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .compare-head div:last-child{color:var(--gold)}
+  .compare-cell .mobile-only{display:none}
+}
+
+/* How it works 10/80/10 */
+.how-section .ratio-banner{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.ratio-chip{background:var(--navy);color:#fff;padding:10px 16px;font-size:13px;font-weight:500}
+.ratio-chip span{color:var(--gold)}
+.how-steps{display:grid;gap:14px}
+@media(min-width:800px){.how-steps{grid-template-columns:repeat(3,1fr);gap:18px}}
+.how-card{background:#fff;border:1px solid var(--line);padding:24px 22px;height:100%}
+.how-card .step-num{font-family:var(--serif);font-size:28px;color:var(--gold);margin-bottom:10px}
+.how-card h3{margin-bottom:8px}
+.how-card p{font-size:13.5px;color:var(--muted)}
+
+/* Packages */
+.package-section{background:var(--paper)}
+.package-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.package-tabs button{border:1px solid var(--line);background:#fff;padding:10px 14px;font-size:12.5px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.package-tabs button[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.package-tabs .tab-check{width:14px;text-align:center;font-size:11px;opacity:.7}
+.package-tabs button[aria-selected="true"] .tab-check{opacity:1;color:var(--gold)}
+.recommend-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:rgba(167,139,82,.18);color:var(--gold-dark);padding:3px 7px;margin-left:4px}
+.package-panel{background:#fff;border:1px solid var(--line);padding:24px 20px}
+@media(min-width:700px){.package-panel{padding:28px}}
+.decision-fit{margin-bottom:20px}
+.decision-fit h3{font-family:var(--serif);font-size:1.45rem;margin-bottom:8px}
+.decision-fit p{font-size:14px;color:var(--muted)}
+.decision-fit strong{color:var(--navy);font-weight:500}
+.day-map{display:grid;gap:10px;margin-bottom:22px}
+@media(min-width:700px){.day-map{grid-template-columns:repeat(5,1fr);gap:8px}}
+.day-slot{border:1px solid var(--line);padding:14px 12px;background:var(--ivory);min-height:100%}
+.day-slot[data-included="true"]{background:#fff;border-color:#c9bea9}
+.day-slot[data-included="false"]{opacity:.55}
+.day-slot-top{display:flex;justify-content:space-between;gap:6px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.day-state{color:var(--gold-dark);font-weight:600}
+.day-slot[data-included="false"] .day-state{color:var(--muted);font-weight:500}
+.day-slot h4{font-size:13px;margin:0 0 8px;color:var(--navy);font-weight:500;line-height:1.35}
+.day-slot-detail p{font-size:12px;color:var(--muted);line-height:1.5}
+.day-use{margin-top:6px}
+.day-use span{color:var(--gold-dark)}
+.decision-footer{display:grid;gap:16px;padding-top:18px;border-top:1px solid var(--line)}
+@media(min-width:760px){.decision-footer{grid-template-columns:1fr auto;align-items:end}}
+.decision-price{display:flex;flex-direction:column;gap:4px}
+.decision-price span{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.decision-price strong{font-family:var(--serif);font-size:2rem;color:var(--navy);font-weight:500}
+.guarantee-note{font-size:12.5px;color:var(--muted);max-width:34em;line-height:1.6}
+.guarantee-note strong{color:var(--navy);font-weight:500}
+.decision-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.package-footnote{margin-top:16px;font-size:12.5px;color:var(--muted)}
+
+/* Testimonials */
+.review-grid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:800px){.review-grid{grid-template-columns:repeat(4,1fr)}}
+.review-card{text-align:left;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.review-image{position:relative;aspect-ratio:16/10;background:var(--line);overflow:hidden}
+.review-image img{width:100%;height:100%;object-fit:cover}
+.play-badge{position:absolute;left:10px;bottom:10px;width:28px;height:28px;border-radius:50%;background:rgba(16,29,56,.88);color:#fff;display:grid;place-content:center;font-size:11px}
+.review-text{padding:12px 12px 14px;display:grid;gap:2px}
+.review-text strong{font-size:13px;color:var(--navy)}
+.review-text span{font-size:11.5px;color:var(--muted)}
+.fineprint{font-size:12px;color:var(--muted);margin-top:14px}
+
+/* Coach */
+.coach-section{background:#fff;border-block:1px solid var(--line)}
+.coach-grid{display:grid;gap:28px}
+@media(min-width:860px){.coach-grid{grid-template-columns:.7fr 1.3fr;gap:48px;align-items:start}}
+.coach-portrait{position:relative;max-width:280px}
+.coach-portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--line)}
+.portrait-label{margin-top:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.portrait-label strong{display:block;font-family:var(--serif);font-size:18px;letter-spacing:.04em;color:var(--navy);text-transform:none;margin-top:4px;font-weight:500}
+.coach-name{font-size:15px;margin:10px 0 12px;color:var(--navy)}
+.coach-name span{color:var(--muted)}
+.coach-copy > p{margin-bottom:14px;max-width:38em}
+blockquote{margin:0 0 20px;padding-left:16px;border-left:2px solid var(--gold);font-family:var(--serif);font-size:1.35rem;color:var(--navy);font-style:italic}
+.coach-values{display:grid;gap:16px;margin-bottom:18px}
+@media(min-width:560px){.coach-values{grid-template-columns:1fr 1fr}}
+.coach-values h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:4px}
+.coach-values p{font-size:13px;color:var(--muted)}
+.bio-details{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* Guarantee / post-class */
+.support-grid{display:grid;gap:14px}
+@media(min-width:760px){.support-grid{grid-template-columns:repeat(2,1fr)}}
+.support-card{background:#fff;border:1px solid var(--line);padding:22px 20px}
+.support-card h3{margin-bottom:8px;font-size:1rem}
+.support-card p{font-size:13.5px;color:var(--muted)}
+.support-card.featured{border-color:var(--gold);background:linear-gradient(180deg,#fffef9,#fff)}
+
+/* Fit / not-fit */
+.fit-grid{display:grid;gap:14px}
+@media(min-width:760px){.fit-grid{grid-template-columns:1fr 1fr}}
+.fit-card{padding:24px 22px;border:1px solid var(--line);background:#fff}
+.fit-card.yes{border-top:3px solid var(--gold)}
+.fit-card.no{border-top:3px solid #a4a8af}
+.fit-card h3{margin-bottom:14px;font-family:var(--serif);font-size:1.25rem}
+.fit-card ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.fit-card li{font-size:14px;line-height:1.55;padding-left:18px;position:relative;color:var(--ink)}
+.fit-card.yes li::before{content:"✓";position:absolute;left:0;color:var(--gold-dark);font-size:12px;top:2px}
+.fit-card.no li::before{content:"–";position:absolute;left:0;color:var(--muted);top:0}
+
+/* Schedule */
+.schedule-toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px;font-size:13px;color:var(--muted)}
+.schedule-toolbar select{border:1px solid var(--line);background:#fff;padding:8px 12px;font:inherit;color:var(--navy)}
+.schedule-list{border:1px solid var(--line);background:#fff}
+.schedule-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;padding:14px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.schedule-row:last-child{border-bottom:0}
+.schedule-row time,.pending-date{color:var(--gold-dark);font-weight:500;font-size:13px}
+.venue{margin-top:14px;font-size:13px;color:var(--navy)}
+
+/* FAQ */
+.faq-layout{display:grid;gap:28px}
+@media(min-width:860px){.faq-layout{grid-template-columns:.85fr 1.15fr;gap:48px}}
+.faq-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq-answer{padding:18px 0;border-bottom:1px solid var(--line)}
+.faq-answer h3{font-size:15px;margin-bottom:8px}
+.faq-answer p{font-size:13.5px;color:var(--muted)}
+
+/* Final CTA */
+.final-cta{background:var(--navy);color:#fff;padding:64px 0 88px}
+.final-cta .eyebrow{color:var(--gold)}
+.final-cta h2{color:#fff;margin:8px 0 12px}
+.final-cta p{color:rgba(255,255,255,.72);margin-bottom:22px}
+.final-inner{display:grid;gap:20px}
+@media(min-width:760px){.final-inner{grid-template-columns:1.4fr auto;align-items:end}}
+
+/* Footer */
+.footer{padding:28px 0 110px;display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+.footer a:hover{color:var(--navy)}
+.footer .wordmark{font-size:16px}
+
+/* Sticky mobile CTA */
+.mobile-contact{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(246,243,236,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.mobile-line{display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;background:var(--navy);color:#fff;font-size:13px;font-weight:500;padding:0 16px}
+.line-badge{background:#06C755;color:#fff;font-size:10px;letter-spacing:.06em;padding:3px 7px;border-radius:3px;font-weight:700}
+@media(min-width:880px){.mobile-contact{display:none}.footer{padding-bottom:36px}.final-cta{padding-bottom:64px}}
+
+/* Dialog */
+dialog{border:1px solid var(--line);padding:0;max-width:min(720px,92vw);width:100%;background:var(--paper)}
+dialog::backdrop{background:rgba(16,29,56,.55)}
+.dialog-top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.dialog-top h2{font-size:1rem}
+#close-video{font-size:22px;line-height:1;padding:4px 8px}
+#video-frame{aspect-ratio:16/9;background:#000}
+#video-frame iframe{width:100%;height:100%;border:0}
+#youtube-link{display:inline-block;padding:12px 16px;font-size:13px}
+
+.sample-banner{background:var(--navy);color:rgba(255,255,255,.8);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding:8px 12px}
+.sample-banner strong{color:var(--gold);font-weight:500}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">ข้ามไปเนื้อหาหลัก</a>
+<div class="sample-banner"><strong>SAMPLE</strong> · Revised conversion copy for Jedi review · Not live</div>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="#top" class="wordmark" aria-label="Limitless Club หน้าแรก">LIMITLESS <span>CLUB</span><small>AI FOR A BRIGHTER TOMORROW</small></a>
+    <nav class="desktop-nav" aria-label="เมนูหลัก">
+      <a href="#how">วิธีเรียน</a>
+      <a href="#plans">แพ็กเกจ</a>
+      <a href="#schedule">ตารางเรียน</a>
+      <a href="#faq">คำถาม</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="nav-line" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">คุยกับทีม <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="เปิดเมนู"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="เมนูมือถือ">
+    <a href="#how">วิธีเรียน</a>
+    <a href="#plans">แพ็กเกจ</a>
+    <a href="#reviews">รีวิว</a>
+    <a href="#schedule">ตารางเรียน</a>
+    <a href="#faq">คำถาม</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-main page-width">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="gold-dash"></span>สำหรับเจ้าของธุรกิจ · Workshop 2 วัน · Onsite พระราม 3</p>
+        <h1 id="hero-title">เรียน AI มาแล้ว<br>แต่วันจันทร์ยังใช้ไม่ได้?</h1>
+        <p class="hero-sub">2 วัน Onsite ลงมือสร้างพนักงาน AI จากงานจริงของบริษัทคุณ พร้อมทีมช่วยในห้อง กลับไปพร้อมระบบที่เริ่มใช้ได้ ไม่ใช่แค่รายชื่อเครื่องมือ</p>
+
+        <div class="proof-strip" aria-label="หลักฐานสั้น">
+          <div class="proof-faces" aria-hidden="true">
+            <img src="https://img.youtube.com/vi/MOV-b6r7jOE/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
+            <img src="https://img.youtube.com/vi/G0bt9yV1xK0/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
+            <img src="https://img.youtube.com/vi/3N0tMSosbf8/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
+            <img src="https://img.youtube.com/vi/jIjdK2rqC9o/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
+          </div>
+          <span><strong>Onsite พระราม 3</strong></span>
+          <span>โค้ชเจได CEO 15+ ปี</span>
+          <span>รีวิวจากเจ้าของธุรกิจจริง</span>
+        </div>
+
+        <ul class="benefit-list">
+          <li><span><strong>Company Brain</strong> จากข้อมูลบริษัทของคุณ — ให้ AI รู้จักธุรกิจก่อนเริ่มงาน</span></li>
+          <li><span><strong>ผู้ช่วย AI สร้างในคลาส</strong> — ผูกกับ 3+ Build Guarantee หากสร้างไม่ครบ ทีมตามช่วย</span></li>
+          <li><span><strong>Workflow ที่ตัดงานซ้ำ</strong> — กลับไปใช้กับงานจริงได้ ไม่ใช่แค่ Prompt สาธิต</span></li>
+        </ul>
+
+        <div class="hero-actions">
+          <a href="#plans" class="button primary">ดูรอบเรียนและแพ็กเกจ <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">คุยกับทีมทาง LINE <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="price-chip"><em>แพ็กเกจ 2 วัน ฿23,800</em> · หรือเริ่มวันแรก ฿9,900</p>
+      </div>
+
+      <div class="hero-art">
+        <span class="sample-badge">Revised Sample</span>
+        <div class="art-stage">
+          <img src="https://limitless-precision-preview.vercel.app/assets/precision-hero.webp" alt="ประติมากรรมสามมิติสีกรมท่าและทอง สื่อถึงระบบที่ทำงานร่วมกัน" width="1536" height="1024" fetchpriority="high" id="hero-image">
+        </div>
+        <div class="art-caption">
+          <span>THE ART OF<br>WORKING SMARTER.</span>
+          <span>CLARITY · CONTROL · CAPABILITY</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Classroom photo + proof -->
+  <section class="room-intro section page-width" aria-labelledby="room-title">
+    <div class="room-heading">
+      <p class="eyebrow">LIMITLESS IN THE ROOM</p>
+      <h2 id="room-title">เข้ามาพร้อมโจทย์ธุรกิจ<br>แล้วลงมือสร้างไปด้วยกัน</h2>
+      <p>ห้องเรียนของเจ้าของธุรกิจที่พร้อมพา AI มาเป็นส่วนหนึ่งของการทำงาน — ไม่ใช่คลาสดูเดโมอย่างเดียว</p>
+    </div>
+    <figure>
+      <img src="https://limitless-precision-preview.vercel.app/assets/founders-room.webp" alt="โค้ชและผู้เรียนร่วมถ่ายภาพในคลาส Marketing AI" width="1600" height="1067" loading="lazy">
+      <figcaption>
+        <strong>LIMITLESS IN REAL LIFE</strong>
+        <span>บรรยากาศจากคลาส · Limitless Training Center พระราม 3</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- 3. Monday before/after -->
+  <section class="compare-section section" id="monday" aria-labelledby="monday-title">
+    <div class="page-width">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / AFTER CLASS REALITY</p>
+          <h2 id="monday-title">วันจันทร์หลังเรียน:<br>แบบเดิม vs แบบ Limitless</h2>
+        </div>
+        <p>เป้าหมายไม่ใช่รู้จักเครื่องมือมากขึ้น แต่คือกลับไปทำงานได้ในสัปดาห์ถัดไป</p>
+      </div>
+      <div class="compare-table" role="table" aria-label="เปรียบเทียบวันจันทร์หลังเรียน">
+        <div class="compare-row compare-head" role="row">
+          <div role="columnheader">แบบเดิมที่มักเจอ</div>
+          <div role="columnheader">แบบ Limitless</div>
+        </div>
+        <div class="compare-row" role="row">
+          <div class="compare-cell before" role="cell">
+            <span class="compare-label mobile-only">แบบเดิม</span>
+            <strong>รู้แล้วว่า AI ทำอะไรได้ แต่ยังไม่รู้จะเริ่มจากงานไหน</strong>
+            <p>เปิด ChatGPT แล้วติดที่ “จะพิมพ์อะไรดี” เพราะยังไม่มีบริบทธุรกิจและงานที่ชัด</p>
+          </div>
+          <div class="compare-cell after" role="cell">
+            <span class="compare-label">แบบ Limitless</span>
+            <strong>มี Company Brain และงานที่เลือกไว้แล้ว</strong>
+            <p>AI รู้จักบริษัทคุณ และคุณรู้แล้วว่างานไหนควรให้มันช่วยก่อน</p>
+          </div>
+        </div>
+        <div class="compare-row" role="row">
+          <div class="compare-cell before" role="cell">
+            <span class="compare-label mobile-only">แบบเดิม</span>
+            <strong>ได้ Prompt ตัวอย่าง แต่ต้องปรับเองจนท้อ</strong>
+            <p>ตัวอย่างสำเร็จรูปไม่ตรงสินค้า ลูกค้า และวิธีทำงานของบริษัท</p>
+          </div>
+          <div class="compare-cell after" role="cell">
+            <span class="compare-label">แบบ Limitless</span>
+            <strong>มีผู้ช่วย AI ที่สร้างจากโจทย์คุณในคลาส</strong>
+            <p>ลงมือบนโน้ตบุ๊ก พร้อมถามและแก้จุดติดกับโค้ชและทีมตอนเรียน</p>
+          </div>
+        </div>
+        <div class="compare-row" role="row">
+          <div class="compare-cell before" role="cell">
+            <span class="compare-label mobile-only">แบบเดิม</span>
+            <strong>งานซ้ำยังอยู่ที่คน — AI ยังเป็นของเล่น</strong>
+            <p>รู้ชื่อเครื่องมือหลายตัว แต่ยังไม่ได้ต่อเป็นขั้นตอนที่ใช้ซ้ำได้</p>
+          </div>
+          <div class="compare-cell after" role="cell">
+            <span class="compare-label">แบบ Limitless</span>
+            <strong>มี Workflow ให้ AI ช่วยงานซ้ำ โดยคุณตรวจงาน</strong>
+            <p>โมเดล สั่งงาน 10 · AI ทำ 80 · คุณตรวจ 10 เพื่อให้ผลออกมาใช้ได้จริง</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How it works 10/80/10 -->
+  <section class="how-section section page-width" id="how" aria-labelledby="how-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 / HOW IT WORKS</p>
+        <h2 id="how-title">สั่งงาน 10 · AI ทำ 80 · ตรวจ 10</h2>
+      </div>
+      <p>วิธีคิดที่ใช้ในคลาส — ให้คนคุมทิศทางและคุณภาพ ให้ AI ทำงานส่วนกลาง</p>
+    </div>
+    <div class="ratio-banner" aria-hidden="true">
+      <div class="ratio-chip">สั่งงาน <span>10</span></div>
+      <div class="ratio-chip">AI ทำ <span>80</span></div>
+      <div class="ratio-chip">ตรวจ <span>10</span></div>
+    </div>
+    <div class="how-steps">
+      <article class="how-card">
+        <div class="step-num">01</div>
+        <h3>เลือกงานก่อนเลือกเครื่องมือ</h3>
+        <p>เริ่มจากงานที่กินเวลาและทำซ้ำในธุรกิจคุณ ไม่เริ่มจากรายชื่อแอป</p>
+      </article>
+      <article class="how-card">
+        <div class="step-num">02</div>
+        <h3>Brief ให้ AI รู้จักบริษัท</h3>
+        <p>วาง Company Brain จากข้อมูลที่มีสิทธิ์ใช้ — สินค้า ลูกค้า น้ำเสียง ขั้นตอนงาน</p>
+      </article>
+      <article class="how-card">
+        <div class="step-num">03</div>
+        <h3>ตรวจงานก่อนใช้จริง</h3>
+        <p>กำหนดจุดที่คนต้องอนุมัติ แล้วค่อยปล่อยให้ AI ช่วยงานซ้ำอย่างมีขอบเขต</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. Package picker -->
+  <section id="courses" class="section package-section" aria-labelledby="courses-title">
+    <div class="page-width">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / CHOOSE YOUR PATH</p>
+          <h2 id="courses-title">เลือกแพ็กเกจตามงาน<br>ที่อยากให้ AI ช่วย</h2>
+        </div>
+        <p>เลือก 1 แพ็กเกจตามเป้าหมาย — กดแท็บแล้วดู Day ที่รวมและราคารวมในแผงเดียว</p>
+      </div>
+
+      <div id="plans" class="package-picker">
+        <div id="package-tabs" class="package-tabs" role="tablist" aria-label="เลือกแพ็กเกจเรียน AI"></div>
+        <p id="selection-status" class="sr-only" role="status"></p>
+        <div id="package-detail" class="package-panel" role="tabpanel" tabindex="0"></div>
+      </div>
+      <p class="package-footnote">Day คือหัวข้อในหลักสูตร ดูวันเข้าเรียนจริงได้ในตาราง · เคยเรียนแล้ว? <a class="text-link" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">สอบถามสิทธิ์อัปเกรดกับทีม ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 6. Testimonials -->
+  <section id="reviews" class="section page-width" aria-labelledby="reviews-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">04 / FROM FOUNDERS IN THE ROOM</p>
+        <h2 id="reviews-title">ฟังจากเจ้าของธุรกิจ<br>ที่เคยมาเรียนด้วยตัวเอง</h2>
+      </div>
+      <a class="text-link" href="https://jeditrinupab.com/reviews" target="_blank" rel="noopener noreferrer">ดูรีวิวทั้งหมด ↗</a>
+    </div>
+    <p class="muted" style="margin-bottom:20px;font-size:14px">เลือกฟังจากคนที่ทำธุรกิจใกล้เคียงคุณ · รีวิวจากคลาสรุ่นก่อนหน้า</p>
+    <div id="review-grid" class="review-grid"></div>
+    <p class="fineprint">ผลลัพธ์ขึ้นอยู่กับธุรกิจและการนำไปใช้ รีวิวนี้เป็นประสบการณ์จากรุ่นก่อนหน้า ไม่ใช่การรับประกันรายได้หรือผลทางธุรกิจ</p>
+  </section>
+
+  <!-- 7. Coach -->
+  <section id="coach" class="coach-section section" aria-labelledby="coach-title">
+    <div class="coach-grid page-width">
+      <div class="coach-portrait">
+        <img src="https://limitless-precision-preview.vercel.app/assets/coach.webp" alt="โค้ชเจได ไตรนุภาพ จิระไตรธาร" width="322" height="459" loading="lazy">
+        <div class="portrait-label"><span>YOUR PROGRAM LEAD</span><strong>Coach Jedi</strong></div>
+      </div>
+      <div class="coach-copy">
+        <p class="eyebrow">05 / YOUR COACH</p>
+        <h2 id="coach-title">เรียนกับคนที่ใช้ AI<br>ในธุรกิจจริง</h2>
+        <p class="coach-name">โค้ชเจได <span>ไตรนุภาพ จิระไตรธาร</span></p>
+        <p>CEO และ AI &amp; Business Growth Coach ที่นำวิธีทำงานจากบริษัทมาใช้ในห้องเรียน เพื่อให้คุณสร้างระบบจากโจทย์ของตัวเอง</p>
+        <blockquote>“สิ่งที่ผมสอนคือสิ่งที่ผมใช้”</blockquote>
+        <div class="coach-values">
+          <div>
+            <h3>Build in class.</h3>
+            <p>ลงมือทำกับงานจริง มีทีมช่วยระหว่างเรียน</p>
+          </div>
+          <div>
+            <h3>Grow together.</h3>
+            <p>เรียนต่อกับ Community ตามสิทธิ์ในแพ็กเกจ</p>
+          </div>
+        </div>
+        <p class="bio-details">บริหาร Creatus Corporation และทำธุรกิจจริงมากว่า 15 ปี จบปริญญาโท Mechatronics จาก National University of Singapore ปริญญาตรีจาก University of Manchester และผ่านโปรแกรม Strategic Global Leader ที่ INSEAD และ Leadership Communication ที่ UC Berkeley</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Guarantee + post-class -->
+  <section class="section page-width" id="support" aria-labelledby="support-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">06 / AFTER CLASS</p>
+        <h2 id="support-title">เรียนจบ แล้วไปต่อได้<br>โดยมีทีมอยู่ข้างๆ</h2>
+      </div>
+      <p>สิทธิ์หลังเรียนขึ้นกับแพ็กเกจที่เลือก — สอบถามทีมก่อนสมัคร</p>
+    </div>
+    <div class="support-grid">
+      <article class="support-card featured">
+        <h3>3+ Build Guarantee</h3>
+        <p>เมื่อลงมือครบตามคลาสที่เกี่ยวข้องแล้วยังสร้างไม่ครบ ทีมจะตามช่วยให้ครบภายใน 1 วัน เป็นการช่วยสร้าง ไม่ใช่รับประกันรายได้หรือผลทางธุรกิจ</p>
+      </article>
+      <article class="support-card">
+        <h3>เรียนต่อได้ตลอด 1 ปี</h3>
+        <p>แพ็กเกจ Day 1–4 และ Day 1–6 รวม AI-First CEO Online Classes และ AI Updates ตามเงื่อนไขแพ็กเกจ</p>
+      </article>
+      <article class="support-card">
+        <h3>Community &amp; Q&amp;A</h3>
+        <p>แพ็กเกจยาวรวม Founder Community และ Online Implementation Q&amp;A สัปดาห์ละ 2 ครั้ง ตามสิทธิ์ในแพ็กเกจ</p>
+      </article>
+      <article class="support-card">
+        <h3>Private CEO Advisory</h3>
+        <p>ที่ปรึกษาส่วนตัวด้าน AI และกลยุทธ์ธุรกิจ เป็นบริการเสริมแยกต่างหาก ไม่รวมในแพ็กเกจมาตรฐาน</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 9. Fit / not-fit -->
+  <section class="section" id="fit" aria-labelledby="fit-title" style="background:#fff;border-block:1px solid var(--line)">
+    <div class="page-width">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">07 / IS THIS FOR YOU?</p>
+          <h2 id="fit-title">คลาสนี้เหมาะกับใคร<br>— และใครที่ยังไม่ใช่ตอนนี้</h2>
+        </div>
+        <p>เราอยากให้คุณเลือกถูกจังหวะ ไม่ใช่แค่สมัครให้เต็มที่นั่ง</p>
+      </div>
+      <div class="fit-grid">
+        <article class="fit-card yes">
+          <h3>เหมาะกับคุณ ถ้า…</h3>
+          <ul>
+            <li>เป็นเจ้าของธุรกิจหรือผู้นำที่อยากให้ AI ช่วยงานจริง ไม่ใช่แค่ทดลองเล่น</li>
+            <li>พร้อมนำโน้ตบุ๊กและข้อมูลบริษัท (ที่มีสิทธิ์ใช้) มาลงมือในคลาส</li>
+            <li>อยากได้ระบบและ Workflow กลับไปใช้วันจันทร์ ไม่ใช่แค่สไลด์หรือ Prompt สำเร็จรูป</li>
+            <li>โอเคกับการตรวจงานเอง — ให้ AI ทำส่วนกลาง คุณคุมคุณภาพ</li>
+          </ul>
+        </article>
+        <article class="fit-card no">
+          <h3>ยังไม่เหมาะ ถ้า…</h3>
+          <ul>
+            <li>ต้องการคอร์สรับประกันรายได้หรือยอดขายจาก AI</li>
+            <li>อยากได้แค่บรรยายทฤษฎี โดยไม่พร้อมลงมือกับงานตัวเอง</li>
+            <li>มองหาสิทธิบัตรซอฟต์แวร์หรือคอร์สเขียนโค้ดเชิงลึกสำหรับนักพัฒนา</li>
+            <li>ยังไม่มีโจทย์ธุรกิจเลย และยังไม่อยากเริ่มจากงานจริงในตอนนี้</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Schedule -->
+  <section id="schedule" class="section page-width" aria-labelledby="schedule-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">08 / MAKE ROOM</p>
+        <h2 id="schedule-title">เลือกรอบที่คุณพร้อมเริ่ม</h2>
+      </div>
+      <p>ดูตารางได้ทันที แล้วคุยกับทีมเพื่อยืนยันที่นั่ง</p>
+    </div>
+    <div class="schedule-toolbar">
+      <p>ปฏิทินคลาส</p>
+      <label>เดือน
+        <select id="schedule-month">
+          <option value="2026-10">ตุลาคม 2569</option>
+          <option value="2026-11" selected>พฤศจิกายน 2569</option>
+        </select>
+      </label>
+    </div>
+    <div id="schedule-list" class="schedule-list" aria-live="polite"></div>
+    <p class="venue">Limitless Training Center · พระราม 3 ชั้น 2</p>
+    <p class="fineprint">สอบถามเวลาเรียนและยืนยันสถานที่ของรอบที่เลือกกับทีมก่อนสมัคร</p>
+  </section>
+
+  <!-- 11. FAQ -->
+  <section id="faq" class="faq-section section page-width" aria-labelledby="faq-title">
+    <div class="faq-layout">
+      <div class="faq-intro">
+        <p class="eyebrow">09 / BEFORE YOU BEGIN</p>
+        <h2 id="faq-title">คำถามก่อนเริ่ม</h2>
+        <p class="muted" style="margin:12px 0 16px;font-size:14px">ยังมีคำถามเกี่ยวกับธุรกิจของคุณ?</p>
+        <a class="text-link" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">คุยกับทีมทาง LINE <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="faq-list">
+        <article class="faq-answer">
+          <h3>ไม่มีพื้นฐาน AI เรียนได้ไหม?</h3>
+          <p>เรียนได้ ไม่ต้องมีพื้นฐาน Tech เริ่มจากการพิมพ์แชตและโจทย์ธุรกิจจริง ทุกแพ็กเกจรวมพื้นฐานเพื่อวาง Company Brain แล้วเลือกสายระบบหรือ Content ตามงานที่อยากให้ AI ช่วย</p>
+        </article>
+        <article class="faq-answer">
+          <h3>ต้องเตรียมอะไรมาเรียน?</h3>
+          <p>เตรียมโน้ตบุ๊ก ข้อมูลบริษัทที่มีสิทธิ์นำมาใช้ เป้าหมาย ขั้นตอนงาน และโจทย์ที่อยากแก้ ทีมจะช่วยแนะนำเครื่องมือที่เหมาะกับคลาส</p>
+        </article>
+        <article class="faq-answer">
+          <h3>เรียนวันไหน และที่ไหน?</h3>
+          <p>เรียน Onsite ที่ Limitless Training Center พระราม 3 ชั้น 2 เลือกดูวันที่ในปฏิทินคลาส และสอบถามเวลาเรียนกับทีมก่อนสมัคร</p>
+        </article>
+        <article class="faq-answer">
+          <h3>เรียนจบแล้วมีทีมช่วยต่อไหม?</h3>
+          <p>แพ็กเกจ Day 1–4 และ Day 1–6 มีคลาสออนไลน์และ Founder Community 1 ปี พร้อม Online Implementation Q&amp;A สัปดาห์ละ 2 ครั้ง สิทธิ์ของแพ็กเกจเริ่มต้นแตกต่างกัน</p>
+        </article>
+        <article class="faq-answer">
+          <h3>มีค่าใช้จ่ายอื่น หรือรับประกันรายได้ไหม?</h3>
+          <p>ค่าเรียนไม่รวม Subscription ของเครื่องมือ AI ที่เลือกใช้ และไม่มีการรับประกันรายได้หรือยอดประหยัด ผลขึ้นอยู่กับข้อมูล ธุรกิจ ทีม และการนำไปใช้จริง สอบถามยอดชำระและเงื่อนไขกับทีมก่อนตัดสินใจ</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Final CTA -->
+  <section class="final-cta" aria-labelledby="cta-title">
+    <div class="page-width final-inner">
+      <div>
+        <p class="eyebrow">YOUR BUSINESS. YOUR NEXT MONDAY.</p>
+        <h2 id="cta-title">วันจันทร์หน้า<br>ให้ AI เริ่มทำงานแทนคุณ</h2>
+        <p>เลือกแพ็กเกจเดียวตามเป้าหมาย · เริ่ม ฿23,800 · หรือเริ่มวันแรก ฿9,900</p>
+      </div>
+      <a class="button light" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">ยืนยันที่นั่งทาง LINE<span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer page-width">
+  <a class="wordmark" href="#top">LIMITLESS <span>CLUB</span></a>
+  <p>AI FOR A BRIGHTER TOMORROW · Sample page</p>
+  <div style="display:flex;gap:16px;align-items:center">
+    <a href="https://jeditrinupab.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy</a>
+    <a href="https://jeditrinupab.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms</a>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<nav class="mobile-contact" aria-label="ติดต่อทีม">
+  <a class="mobile-line" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">
+    <span class="line-badge">LINE</span>
+    ฿23,800 · จองที่นั่งทาง LINE
+    <span aria-hidden="true">↗</span>
+  </a>
+</nav>
+
+<dialog id="video-dialog" aria-labelledby="video-title">
+  <div class="dialog-top">
+    <h2 id="video-title">เสียงจากผู้เรียน</h2>
+    <button type="button" id="close-video" aria-label="ปิดวิดีโอ">×</button>
+  </div>
+  <div id="video-frame"></div>
+  <a id="youtube-link" target="_blank" rel="noopener noreferrer">เปิดวิดีโอบน YouTube ↗</a>
+</dialog>
+
+<script>
+(function () {
+  const LINE = "https://line.me/R/ti/p/@JEDITRINUPAB";
+  const fmt = (n) => "฿" + n.toLocaleString("en-US");
+
+  const MODULES = {
+    foundation: { day: "DAY 1", job: "รู้จักบริษัท", title: "Shortcut to AI Expert", learn: "Company Brain + ผู้ช่วย AI", purpose: "ให้ AI เข้าใจบริษัท" },
+    system:     { day: "DAY 2", job: "งานซ้ำ", title: "Shortcut to AI Expert", learn: "Agent + Workflow", purpose: "ให้ AI ช่วยทำงานซ้ำ" },
+    content:    { day: "DAY 3", job: "คอนเทนต์", title: "Marketing AI for Founders", learn: "ภาพ วิดีโอ + Content Engine", purpose: "สร้างสื่อให้แบรนด์" },
+    tools:      { day: "DAY 4", job: "เครื่องมือเอง", title: "Vibe Coding", learn: "Vibe Coding", purpose: "สร้างเครื่องมือใช้เอง" },
+    team:       { day: "DAY 5–6", job: "ทีม AI", title: "Multi AI Agent Masterclass", learn: "Multi AI Agent · 2 วัน", purpose: "ให้ทีม AI ทำงานร่วมกัน" }
+  };
+  const MODULE_ORDER = ["foundation", "system", "content", "tools", "team"];
+
+  const PACKAGES = [
+    { id: "essential", label: "ระบบ", name: "Essential Starter", days: 2, price: 23800, recommend: true, title: "เริ่มใช้ AI ช่วยงานธุรกิจ", audience: "เจ้าของธุรกิจและผู้นำที่อยากให้ AI ช่วยงานประจำและงานซ้ำ", purpose: "วางพื้นฐาน แล้วสร้างผู้ช่วยพร้อมขั้นตอนการทำงาน", modules: ["foundation", "system"], dayLabel: "Day 1 + Day 2" },
+    { id: "creative", label: "Content", name: "Creative Starter", days: 2, price: 23800, recommend: true, title: "เริ่มสร้าง Content ด้วย AI", audience: "เจ้าของแบรนด์และผู้นำการตลาดที่อยากทำภาพ วิดีโอ และคอนเทนต์", purpose: "วางพื้นฐาน แล้วนำ AI มาช่วยผลิตสื่อของแบรนด์", modules: ["foundation", "content"], dayLabel: "Day 1 + Day 3" },
+    { id: "impact", label: "ระบบ + Content", name: "Business Impact Pro", days: 3, price: 31900, title: "ได้ทั้งระบบงานและ Content", audience: "เจ้าของธุรกิจที่ต้องการทั้งผู้ช่วยทำงานและงานการตลาด", purpose: "ใช้ AI ช่วยงานประจำ พร้อมสร้างสื่อและ Content Engine", modules: ["foundation", "system", "content"], dayLabel: "Day 1–3" },
+    { id: "builder", label: "สร้างเครื่องมือ", name: "System Builder", days: 4, price: 44900, title: "ครบถึงการสร้าง App ของบริษัท", audience: "เจ้าของธุรกิจและผู้นำที่อยากสร้าง App หรือ Dashboard ใช้เอง", purpose: "เรียนพื้นฐาน ระบบ และ Content พร้อมฝึกสร้างเครื่องมือธุรกิจ", modules: ["foundation", "system", "content", "tools"], dayLabel: "Day 1–4" },
+    { id: "master", label: "ครบทุกคลาส", name: "The Limitless Master", days: 6, price: 80800, title: "เรียนครบถึงการสร้างทีม AI", audience: "เจ้าของธุรกิจและผู้นำที่อยากเชื่อมงานหลายส่วนด้วยทีม AI", purpose: "เรียนครบทั้งพื้นฐาน ระบบ Content เครื่องมือ และทีม AI", modules: ["foundation", "system", "content", "tools", "team"], dayLabel: "Day 1–6" }
+  ];
+
+  const REVIEWS = [
+    { name: "K. Auto", role: "เจ้าของคลินิกความงาม", program: "AI Expert · รุ่น 1", video: "MOV-b6r7jOE" },
+    { name: "Dr. Joy", role: "ผู้ก่อตั้ง Vision Clinic", program: "AI Expert · รุ่น 1", video: "G0bt9yV1xK0" },
+    { name: "Dr. Diana", role: "CEO Too Fast to Sleep", program: "AI Expert · รุ่น 1", video: "3N0tMSosbf8" },
+    { name: "K. Louis Scott", role: "นักแสดงและเจ้าของธุรกิจ", program: "AI Expert · รุ่น 1", video: "jIjdK2rqC9o" },
+    { name: "K. Mind", role: "CEO บริษัทคอนกรีต", program: "CEO OS · รุ่น 1", video: "Vc_ULshfWMk" },
+    { name: "K. Ploy", role: "เจ้าของ Lamocha", program: "AI Expert · รุ่น 2", video: "qYoV44cvyNw" },
+    { name: "Coach Jibb", role: "Life Coach", program: "AI Expert · รุ่น 1", video: "t0mmYZXmu7Q" },
+    { name: "K. Jug", role: "นักร้อง SEASON FIVE", program: "AI Expert · รุ่น 2", video: "Uz90eUQmWSU" }
+  ];
+
+  const SCHEDULE = [
+    { id: "start1-oct", name: "Shortcut to AI Expert · Day 1", date: "2026-10-02" },
+    { id: "start2-oct", name: "Shortcut to AI Expert · Day 2", date: "2026-10-03" },
+    { id: "systems-oct", name: "CEO System · Vibe Coding", date: "2026-10-22" },
+    { id: "content-oct", name: "Marketing AI for Founders", date: "2026-10-29" },
+    { id: "team-oct", name: "AI Agent Team Masterclass · 2 days", month: "2026-10", pending: true },
+    { id: "start1-nov", name: "Shortcut to AI Expert · Day 1", date: "2026-11-12" },
+    { id: "start2-nov", name: "Shortcut to AI Expert · Day 2", date: "2026-11-13" },
+    { id: "systems-nov", name: "CEO System · Vibe Coding", date: "2026-11-14" },
+    { id: "content-nov", name: "Marketing AI for Founders", date: "2026-11-19" },
+    { id: "team-nov", name: "AI Agent Team Masterclass · 2 days", date: "2026-11-20", end: "2026-11-21" }
+  ];
+
+  function renderPackage(pkg) {
+    const slots = MODULE_ORDER.map((key) => {
+      const m = MODULES[key];
+      const included = pkg.modules.includes(key);
+      return `<article class="day-slot" data-module="${key}" data-included="${included}" aria-label="${m.day}: ${m.job} — ${included ? "รวมในแพ็กเกจ" : "อัปเกรดได้"}">
+        <div class="day-slot-top"><span>${m.day}</span><span class="day-state">${included ? "✓ รวม" : "อัปเกรดได้"}</span></div>
+        <h4>${m.job}</h4>
+        <div class="day-slot-detail"${included ? "" : " inert"}>
+          <p>${m.learn}</p>
+          <p class="day-use"><span>เพื่อ</span> ${m.purpose}</p>
+        </div>
+      </article>`;
+    }).join("");
+
+    return `<div class="decision-fit">
+        <h3 id="selected-name">${pkg.dayLabel} · ${pkg.days} วัน</h3>
+        <p id="selected-audience"><strong>เหมาะกับ</strong> ${pkg.audience}</p>
+        <p style="margin-top:8px;font-size:13.5px;color:var(--muted)"><strong style="color:var(--navy)">${pkg.name}</strong> — ${pkg.purpose}</p>
+      </div>
+      <div class="day-map" aria-label="หัวข้อเรียนประจำแต่ละวัน">${slots}</div>
+      <div class="decision-footer">
+        <div>
+          <div class="decision-price">
+            <span>ราคารวม · <span id="selected-days">${pkg.days}</span> วัน</span>
+            <strong id="selected-total">${fmt(pkg.price)}</strong>
+          </div>
+          <p class="guarantee-note" style="margin-top:10px"><strong>3+ Build Guarantee</strong> — สร้างไม่ครบ ทีมตามช่วยจนครบภายใน 1 วัน (ไม่การันตีรายได้)</p>
+        </div>
+        <div class="decision-actions">
+          <a class="button primary" href="${LINE}" target="_blank" rel="noopener noreferrer">ยืนยันที่นั่งทาง LINE ↗</a>
+          <a class="text-link" href="#schedule">ดูวันเรียน ↓</a>
+        </div>
+      </div>`;
+  }
+
+  const tabs = document.querySelector("#package-tabs");
+  const panel = document.querySelector("#package-detail");
+  const status = document.querySelector("#selection-status");
+
+  tabs.innerHTML = PACKAGES.map((pkg, i) => {
+    const rec = pkg.recommend ? `<span class="recommend-tag">แนะนำ</span>` : "";
+    return `<button type="button" role="tab" id="package-${pkg.id}" data-package="${pkg.id}" aria-controls="package-detail" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">
+      <span class="tab-check" aria-hidden="true">${i === 0 ? "✓" : ""}</span>
+      <strong>${pkg.label}</strong>${rec}
+    </button>`;
+  }).join("");
+
+  function selectPackage(id, announce) {
+    const pkg = PACKAGES.find((p) => p.id === id);
+    if (!pkg) return;
+    tabs.querySelectorAll('[role="tab"]').forEach((btn) => {
+      const on = btn.dataset.package === id;
+      btn.setAttribute("aria-selected", String(on));
+      btn.tabIndex = on ? 0 : -1;
+      btn.querySelector(".tab-check").textContent = on ? "✓" : "";
+    });
+    panel.setAttribute("aria-labelledby", "package-" + id);
+    panel.innerHTML = renderPackage(pkg);
+    if (announce !== false) {
+      status.textContent = `เลือก ${pkg.name} ${pkg.days} วัน ราคารวม ${fmt(pkg.price)}`;
+    }
+  }
+
+  selectPackage(PACKAGES[0].id, false);
+  tabs.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-package]");
+    if (btn) selectPackage(btn.dataset.package);
+  });
+  tabs.addEventListener("keydown", (e) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)) return;
+    const list = [...tabs.querySelectorAll("[data-package]")];
+    const i = list.findIndex((b) => b === e.target);
+    if (i < 0) return;
+    e.preventDefault();
+    let next = i;
+    if (e.key === "ArrowRight") next = (i + 1) % list.length;
+    if (e.key === "ArrowLeft") next = (i - 1 + list.length) % list.length;
+    if (e.key === "Home") next = 0;
+    if (e.key === "End") next = list.length - 1;
+    list[next].focus();
+    selectPackage(list[next].dataset.package);
+  });
+
+  // Reviews
+  const grid = document.querySelector("#review-grid");
+  grid.innerHTML = REVIEWS.map((r, i) => `<button type="button" class="review-card" data-video="${i}" aria-label="ดูวิดีโอรีวิว ${r.name}">
+    <span class="review-image">
+      <img src="https://img.youtube.com/vi/${r.video}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy">
+      <span class="play-badge" aria-hidden="true">▷</span>
+    </span>
+    <span class="review-text"><strong>${r.name}</strong><span>${r.role}</span><span>${r.program}</span></span>
+  </button>`).join("");
+
+  const dialog = document.querySelector("#video-dialog");
+  const frame = document.querySelector("#video-frame");
+  const ytLink = document.querySelector("#youtube-link");
+  grid.addEventListener("click", (e) => {
+    const card = e.target.closest("[data-video]");
+    if (!card) return;
+    const r = REVIEWS[+card.dataset.video];
+    frame.replaceChildren();
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${r.video}?rel=0`;
+    iframe.title = `วิดีโอรีวิว ${r.name}`;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    frame.appendChild(iframe);
+    ytLink.href = `https://www.youtube.com/watch?v=${r.video}`;
+    dialog.showModal();
+  });
+  document.querySelector("#close-video").addEventListener("click", () => {
+    dialog.close();
+    frame.replaceChildren();
+  });
+  dialog.addEventListener("close", () => frame.replaceChildren());
+
+  // Schedule
+  function todayBangkok() {
+    const parts = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
+    const g = (t) => parts.find((p) => p.type === t).value;
+    return `${g("year")}-${g("month")}-${g("day")}`;
+  }
+  function formatThaiDate(item) {
+    if (item.pending) return null;
+    const start = new Date(item.date + "T12:00:00+07:00");
+    const opts = { day: "numeric", month: "short", year: "numeric" };
+    const a = new Intl.DateTimeFormat("th-TH", opts).format(start);
+    if (!item.end) return a;
+    const end = new Date(item.end + "T12:00:00+07:00");
+    return a + " – " + new Intl.DateTimeFormat("th-TH", opts).format(end);
+  }
+  function renderSchedule() {
+    const month = document.querySelector("#schedule-month").value;
+    const today = todayBangkok();
+    const rows = SCHEDULE.filter((s) => {
+      const m = s.month || s.date.slice(0, 7);
+      if (m !== month) return false;
+      if (s.pending) return month >= today.slice(0, 7);
+      return (s.end || s.date) >= today;
+    });
+    const list = document.querySelector("#schedule-list");
+    list.innerHTML = rows.length
+      ? rows.map((s) => `<div class="schedule-row"><span>${s.name}</span>${s.pending ? `<a class="pending-date" href="${LINE}" target="_blank" rel="noopener noreferrer">ยืนยันวันเรียนกับทีม ↗</a>` : `<time datetime="${s.date}">${formatThaiDate(s)}</time>`}</div>`).join("")
+      : "<p style='padding:16px;font-size:14px;color:var(--muted)'>สอบถามรอบเรียนใหม่กับทีมทาง LINE</p>";
+  }
+  document.querySelector("#schedule-month").addEventListener("change", renderSchedule);
+  renderSchedule();
+
+  // Mobile nav
+  const toggle = document.querySelector(".menu-toggle");
+  const mobileNav = document.querySelector("#mobile-nav");
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    toggle.setAttribute("aria-label", open ? "เปิดเมนู" : "ปิดเมนู");
+    mobileNav.classList.toggle("open", !open);
+  });
+  mobileNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => {
+    toggle.setAttribute("aria-expanded", "false");
+    mobileNav.classList.remove("open");
+  }));
+})();
+</script>
+</body>
+</html>
