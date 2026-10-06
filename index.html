@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#101d38">
-<meta name="description" content="เรียน AI มาแล้ว แต่วันจันทร์ยังใช้ไม่ได้? 2 วัน Onsite สร้างพนักงาน AI จากงานจริงของบริษัทคุณกับ Limitless Club">
+<meta name="description" content="ใช้ AI แบบหางอึ่ง คอขวดทุกแผนก สเกลไม่ได้? 2 วัน Onsite สร้างระบบจากงานจริงของบริษัทคุณ — เนื้อ ๆ ไม่มีน้ำ ใช้ได้เลย">
 <meta name="robots" content="noindex,nofollow">
-<title>Limitless Club — SAMPLE · Revised Copy</title>
+<title>Limitless Club — SAMPLE · Customer Voice v3</title>
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,6 +97,32 @@ p{margin:0;line-height:1.7;color:var(--ink)}
 .art-stage img{width:100%;height:100%;object-fit:cover;opacity:.95}
 .art-caption{display:flex;justify-content:space-between;gap:16px;margin-top:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-family:var(--serif)}
 .sample-badge{position:absolute;top:12px;left:12px;background:rgba(16,29,56,.88);color:#fff;font-size:10px;letter-spacing:.12em;padding:6px 10px;text-transform:uppercase}
+
+
+/* Customer proof wall */
+.proof-wall{background:#fff;border-block:1px solid var(--line)}
+.proof-wall .section-heading{margin-bottom:28px}
+.proof-metrics{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-bottom:28px}
+@media(min-width:720px){.proof-metrics{grid-template-columns:repeat(4,1fr);gap:12px}}
+.proof-metric{background:var(--ivory);border:1px solid var(--line);padding:16px 14px}
+.proof-metric strong{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--navy);font-weight:500;line-height:1.2;margin-bottom:6px}
+.proof-metric span{font-size:12px;color:var(--muted);line-height:1.45}
+.proof-cards{display:grid;gap:14px}
+@media(min-width:760px){.proof-cards{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media(min-width:1100px){.proof-cards{grid-template-columns:repeat(3,1fr)}}
+.proof-card{background:var(--paper);border:1px solid var(--line);padding:22px 20px;display:flex;flex-direction:column;gap:12px;height:100%}
+.proof-card .pull{font-family:var(--serif);font-size:1.2rem;color:var(--navy);line-height:1.35;margin:0;font-weight:500}
+.proof-card .stat{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--gold-dark);background:rgba(167,139,82,.12);padding:5px 10px;border-radius:999px;width:fit-content}
+.proof-card .who{font-size:13px;color:var(--muted);margin:0}
+.proof-card .who strong{color:var(--navy);font-weight:500}
+.proof-card details{margin-top:auto;border-top:1px solid var(--line);padding-top:10px}
+.proof-card summary{font-size:12.5px;font-weight:500;color:var(--navy);cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;border-bottom:1px solid transparent}
+.proof-card summary::-webkit-details-marker{display:none}
+.proof-card summary::after{content:"↓";color:var(--gold-dark);font-size:11px}
+.proof-card details[open] summary::after{content:"↑"}
+.proof-card summary:hover{border-bottom-color:var(--gold)}
+.proof-card .full-quote{margin:12px 0 0;padding:0;border:0;font-family:var(--sans);font-size:13px;font-style:normal;color:var(--muted);line-height:1.7}
+.proof-footnote{font-size:12px;color:var(--muted);margin-top:20px;max-width:52em;line-height:1.6}
 
 /* Classroom / proof */
 .room-intro figure{margin:0;background:#fff;border:1px solid var(--line)}
@@ -278,12 +304,13 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
 </head>
 <body>
 <a class="skip-link" href="#main">ข้ามไปเนื้อหาหลัก</a>
-<div class="sample-banner"><strong>SAMPLE</strong> · Revised conversion copy for Jedi review · Not live</div>
+<div class="sample-banner"><strong>SAMPLE</strong> · Customer-voice rewrite v3 · Not live · noindex</div>
 
 <header class="site-header">
   <div class="nav-wrap">
     <a href="#top" class="wordmark" aria-label="Limitless Club หน้าแรก">LIMITLESS <span>CLUB</span><small>AI FOR A BRIGHTER TOMORROW</small></a>
     <nav class="desktop-nav" aria-label="เมนูหลัก">
+      <a href="#proof">ผลจากผู้เรียน</a>
       <a href="#how">วิธีเรียน</a>
       <a href="#plans">แพ็กเกจ</a>
       <a href="#schedule">ตารางเรียน</a>
@@ -295,9 +322,10 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
     </div>
   </div>
   <nav id="mobile-nav" class="mobile-nav" aria-label="เมนูมือถือ">
+    <a href="#proof">ผลจากผู้เรียน</a>
     <a href="#how">วิธีเรียน</a>
     <a href="#plans">แพ็กเกจ</a>
-    <a href="#reviews">รีวิว</a>
+    <a href="#reviews">รีวิววิดีโอ</a>
     <a href="#schedule">ตารางเรียน</a>
     <a href="#faq">คำถาม</a>
   </nav>
@@ -309,36 +337,36 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
     <div class="hero-main page-width">
       <div class="hero-copy">
         <p class="eyebrow"><span class="gold-dash"></span>สำหรับเจ้าของธุรกิจ · Workshop 2 วัน · Onsite พระราม 3</p>
-        <h1 id="hero-title">เรียน AI มาแล้ว<br>แต่วันจันทร์ยังใช้ไม่ได้?</h1>
-        <p class="hero-sub">2 วัน Onsite ลงมือสร้างพนักงาน AI จากงานจริงของบริษัทคุณ พร้อมทีมช่วยในห้อง กลับไปพร้อมระบบที่เริ่มใช้ได้ ไม่ใช่แค่รายชื่อเครื่องมือ</p>
+        <h1 id="hero-title">ใช้ AI แบบหางอึ่ง<br>คอขวดทุกแผนก สเกลไม่ได้?</h1>
+        <p class="hero-sub">2 วัน Onsite ลงมือสร้างระบบจากงานจริงของบริษัทคุณ — เนื้อ ๆ ไม่มีน้ำ เน้นใช้งานได้เลย พร้อมทีมช่วยในห้อง กลับไปพร้อมระบบที่เริ่มใช้ได้ ไม่ใช่แค่รายชื่อเครื่องมือ</p>
 
-        <div class="proof-strip" aria-label="หลักฐานสั้น">
+        <div class="proof-strip" aria-label="หลักฐานสั้นจากผู้เรียน">
           <div class="proof-faces" aria-hidden="true">
             <img src="https://img.youtube.com/vi/MOV-b6r7jOE/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
             <img src="https://img.youtube.com/vi/G0bt9yV1xK0/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
             <img src="https://img.youtube.com/vi/3N0tMSosbf8/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
             <img src="https://img.youtube.com/vi/jIjdK2rqC9o/hqdefault.jpg" alt="" width="68" height="68" loading="lazy">
           </div>
-          <span><strong>Onsite พระราม 3</strong></span>
-          <span>โค้ชเจได CEO 15+ ปี</span>
-          <span>รีวิวจากเจ้าของธุรกิจจริง</span>
+          <span><strong>ลด cost ฿25,000/เดือน</strong> · หลิน</span>
+          <span><strong>ทีม 15→45 คน</strong> · ผู้บริหารตัวแทน</span>
+          <span><strong>คอขวดหาย · ครึ่งวัน</strong> · Bam</span>
         </div>
 
         <ul class="benefit-list">
-          <li><span><strong>Company Brain</strong> จากข้อมูลบริษัทของคุณ — ให้ AI รู้จักธุรกิจก่อนเริ่มงาน</span></li>
-          <li><span><strong>ผู้ช่วย AI สร้างในคลาส</strong> — ผูกกับ 3+ Build Guarantee หากสร้างไม่ครบ ทีมตามช่วย</span></li>
-          <li><span><strong>Workflow ที่ตัดงานซ้ำ</strong> — กลับไปใช้กับงานจริงได้ ไม่ใช่แค่ Prompt สาธิต</span></li>
+          <li><span><strong>เนื้อ ๆ ไม่มีน้ำ</strong> — ถ่ายทอดแบบเน้นใช้งานได้เลย เอามาสอนทีมต่อได้</span></li>
+          <li><span><strong>สร้างระบบเองได้</strong> — ทั้งหน้าบ้านและหลังบ้าน โดยไม่ต้องจ้างทีมใหญ่</span></li>
+          <li><span><strong>คอขวดหาย · ลดงานประสาน</strong> — กลับไปใช้กับงานจริง ไม่ใช่แค่ Prompt สาธิต</span></li>
         </ul>
 
         <div class="hero-actions">
-          <a href="#plans" class="button primary">ดูรอบเรียนและแพ็กเกจ <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">คุยกับทีมทาง LINE <span aria-hidden="true">↗</span></a>
+          <a href="https://line.me/R/ti/p/@JEDITRINUPAB" class="button primary" target="_blank" rel="noopener noreferrer">คุยกับทีมทาง LINE <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#plans">ดูรอบเรียนและแพ็กเกจ <span aria-hidden="true">↓</span></a>
         </div>
         <p class="price-chip"><em>แพ็กเกจ 2 วัน ฿23,800</em> · หรือเริ่มวันแรก ฿9,900</p>
       </div>
 
       <div class="hero-art">
-        <span class="sample-badge">Revised Sample</span>
+        <span class="sample-badge">Customer Voice v3</span>
         <div class="art-stage">
           <img src="https://limitless-precision-preview.vercel.app/assets/precision-hero.webp" alt="ประติมากรรมสามมิติสีกรมท่าและทอง สื่อถึงระบบที่ทำงานร่วมกัน" width="1536" height="1024" fetchpriority="high" id="hero-image">
         </div>
@@ -355,7 +383,7 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
     <div class="room-heading">
       <p class="eyebrow">LIMITLESS IN THE ROOM</p>
       <h2 id="room-title">เข้ามาพร้อมโจทย์ธุรกิจ<br>แล้วลงมือสร้างไปด้วยกัน</h2>
-      <p>ห้องเรียนของเจ้าของธุรกิจที่พร้อมพา AI มาเป็นส่วนหนึ่งของการทำงาน — ไม่ใช่คลาสดูเดโมอย่างเดียว</p>
+      <p>ห้องเรียนของเจ้าของธุรกิจที่เคยใช้ AI แบบหางอึ่ง หรือติดขัดเพราะไม่รู้ — มาลงมือสร้างระบบจากงานจริง ไม่ใช่คลาสดูเดโมอย่างเดียว</p>
     </div>
     <figure>
       <img src="https://limitless-precision-preview.vercel.app/assets/founders-room.webp" alt="โค้ชและผู้เรียนร่วมถ่ายภาพในคลาส Marketing AI" width="1600" height="1067" loading="lazy">
@@ -366,6 +394,104 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
     </figure>
   </section>
 
+
+  <!-- 2b. Customer proof wall -->
+  <section class="proof-wall section" id="proof" aria-labelledby="proof-title">
+    <div class="page-width">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">00 / จากผู้เรียนจริง</p>
+          <h2 id="proof-title">เจ้าของธุรกิจพูดเอง<br>— ไม่ใช่สคริปต์การตลาด</h2>
+        </div>
+        <p>ตัวเลขด้านล่างมาจากข้อความที่ผู้เรียนเล่าให้โค้ชเจไดหลังนำไปใช้จริง แต่ละท่านระบุชื่อ/บทบาทตามที่เปิดเผยได้</p>
+      </div>
+
+      <div class="proof-metrics" aria-label="ตัวเลขจากผู้เรียน">
+        <div class="proof-metric">
+          <strong>฿25,000/เดือน</strong>
+          <span>ลด cost เบื้องต้น — หลิน · CFP® CPA</span>
+        </div>
+        <div class="proof-metric">
+          <strong>15 → 45 คน</strong>
+          <span>ขยายทีมตัวแทน + สร้าง 4 ระบบ — ผู้บริหารทีมตัวแทนขาย</span>
+        </div>
+        <div class="proof-metric">
+          <strong>ครึ่งวัน</strong>
+          <span>คอขวดหาย หลังเอามาสอนทีมต่อ — Bam · เจ้าของออฟฟิศ</span>
+        </div>
+        <div class="proof-metric">
+          <strong>≥ ฿40,000/เดือน</strong>
+          <span>ลดคนประสานงาน·ตรวจเอกสาร — วิน</span>
+        </div>
+      </div>
+
+      <div class="proof-cards">
+        <article class="proof-card">
+          <p class="pull">“คอขวดหายเลย ภายในเวลาแค่ครึ่งวัน”</p>
+          <span class="stat">คอขวดหาย · ครึ่งวัน</span>
+          <p class="who"><strong>Bam</strong> · เจ้าของออฟฟิศ</p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">คอร์สของโค้ชเจได เรียกว่าเปลี่ยนชีวิตพี่และพนักงานทั้งออฟฟิศพี่เลยค่ะ ก่อนหน้านี้เราทำงานกันแบบ manual ใช้ ai กันแบบหางอึ่ง เกิดคอขวดทุกแผนก สเกลไม่ได้ แต่พอมาเรียน โดยความที่โค้ชมีความรู้ลึกรู้จริง ถ่ายทอดแบบเน้นใช้งานได้เลย แบบเนื้อ ๆ ไม่มีน้ำ พี่แค่เอามาถ่ายทอดให้พนักงานต่อ คอขวดหายเลย ภายในเวลาแค่ครึ่งวัน คิดว่าใช้เวลาเรียนรู้ต่ออีกนิด น่าจะสเกลธุรกิจได้หลายเท่า นี่เลยตัดสินใจส่งพนักงานมาเรียนเพิ่มอีก</p>
+          </details>
+        </article>
+
+        <article class="proof-card">
+          <p class="pull">“สร้างทีมงานขึ้นมากว่า 45 คน และบริหารได้อย่างสบายมากขึ้น”</p>
+          <span class="stat">15 → 45 คน · 4 ระบบ</span>
+          <p class="who"><strong>ผู้บริหารทีมตัวแทนขาย</strong></p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">จากที่ บริหารตัวแทน 15 คนก็ปวดหัวแล้ว แต่การที่มาเรียนและสร้างระบบได้ สามารถสร้างทีมงานขึ้นมากว่า 45 คน และบริหารได้อย่างสบายมากขึ้น จากเดิมที่จะต้องเสียเงินสร้างระบบต่างๆ ไปแล้วกว่า 1 ล้านบาท เพียงระบบเดียว แต่ตอนนี้สามารถสร้างระบบทั้งหน้าบ้านและหลังบ้านขึ้นมาได้พร้อมๆกัน ถึง 4 ระบบ ที่ทำและนำมาใช้แล้ว</p>
+          </details>
+        </article>
+
+        <article class="proof-card">
+          <p class="pull">“ลด cost เบื้องต้นตอนนี้ได้เดือนละ 25,000 … ทำงานได้เร็วแบบคูณสาม”</p>
+          <span class="stat">ลด cost ฿25,000/เดือน · เร็ว×3</span>
+          <p class="who"><strong>หลิน</strong> · CFP® CPA · ที่ปรึกษา</p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">ลด cost เบื้องต้นตอนนี้ได้เดือนละ 25,000 เพราะตอนแรกตั้งใจจะจ้างคน แล้วไม่จ้าง มาจ่ายค่า AI แทน ทำงานได้เร็วแบบคูณสาม เพิ่มรายได้เบื้องต้นเดือนละ 60,000 เพราะกล้ารับงานที่ปรึกษาเพิ่มขึ้น เพราะมั่นใจแล้วว่าเราทำทัน</p>
+          </details>
+        </article>
+
+        <article class="proof-card">
+          <p class="pull">“ช่วยพี่ได้ในระดับปฏิบัติการเลย”</p>
+          <span class="stat">ลดคนงาน ≥ ฿40,000/เดือน</span>
+          <p class="who"><strong>วิน</strong></p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">ตั้งแต่มี AI มาช่วย พี่ลดcost ไปได้เยอะมาก ลดคนที่ต้องประสานงานเรื่องบัญชี ลดคนตรวจเอกสาร ติดตามงาน ถ้าจ้างคนพี่ว่ามีไม่ต่ำกว่า 40,000 ต่อเดือนอ่ะ พี่ว่ามันช่วยพี่ได้ในระดับปฏิบัติการณ์เลย</p>
+          </details>
+        </article>
+
+        <article class="proof-card">
+          <p class="pull">“ทำลายข้อจำกัดนั้นได้เลย … ลดการใช้เงินแบบคนตาบอด”</p>
+          <span class="stat">ลดการใช้เงินสะเปะสะปะ ≥ ฿2 ล้าน/เดือน</span>
+          <p class="who"><strong>Millie Mocca</strong> · ธุรกิจสินค้า·สั่งของ</p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">ได้วิธีการใช้ กับ ไอเดียคับ ... เมื่อก่อนเราอยากสร้างโปรแกรมหรือระบบ ซักอย่าง เราจะติดขัดโดยความไม่รู้ของเรา หรือการเสียเวลาไปศึกษา แต่พอได้รู้เรื่องจากคุณเจได ไปแล้วเราก้อทำลายข้อจำกัดนั้นได้เลย ทำให้เราสร้างระบบ ที่คอยเฝ้ามองการสั่งสินค้า ... พอเรามีระบบทำให้เราสั่งสินค้ามาได้ตรงกับความต้องการ ไม่สะเปะสะปะ ... ลดการใช้เงินแบบคนตาบอดไปได้ อย่างต่ำ 2,000,000 ต่อเดือน คับ ... เราสร้างช่องทางการขายใหม่โดยมีระบบที่สร้างมาเข้ามาช่วย ทำให้เกิดยอดขายหลักล้าน ได้ทันที และสำคัญคือ สร้างโปรดักส์ใหม่ๆเข้ามาในตลาดได้เร็วขึ้นคับ ... ผมได้กลับมา ไม่ต่ำกว่า 2,000,000 บาทไปกลับนะคับ โดยที่ผมเสียเงิน sub ai ไปประมาณ 50,000 ต่อเดือน รวมกับ mac studio ที่สั่งมาอีก 220,000 คิดง่ายๆ เหมือนผมจ้างคนมา 2 คน+คอมให้พวกเค้าทั้ง 2 คนใช้ แต่ทำงานได้ยาวๆหลายปี ... ผมเรียนกับพี่เจได สิ่งสำคัญคือ วิธีการ , core value และ ไอเดีย คับ มันเอาไปต่อยอดได้จัดๆ แบบไม่สิ้นสุดแล้วคับ</p>
+          </details>
+        </article>
+
+        <article class="proof-card">
+          <p class="pull">“นำ AI มาช่วยทำงานได้หลายส่วน … ประหยัดได้อยู่ในระดับหลักแสนบาท”</p>
+          <span class="stat">ประหยัดระดับหลักแสน · Excel อัตโนมัติ</span>
+          <p class="who"><strong>เจ้าของบริษัทสารดูดความชื้น</strong></p>
+          <details>
+            <summary>อ่านข้อความเต็ม</summary>
+            <p class="full-quote">บริษัทของผมเป็นบริษัทขนาดเล็ก ... เราไม่ได้มีงบประมาณมากพอที่จะจ้างทีมทำเว็บไซต์ กราฟิก คอนเทนต์ และการตลาดในระดับเดียวกับบริษัทใหญ่ๆ หลังจากมาเรียนกับทางทีม โดยเฉพาะสิ่งที่คุณเจไดสอนเกี่ยวกับการเลือกและใช้งาน AI แต่ละประเภท ผมสามารถนำ AI มาช่วยทำงานได้หลายส่วน ตั้งแต่การออกแบบและพัฒนาเว็บไซต์ การทำภาพกราฟิกภาพสินค้า คอนเทนต์ ไปจนถึงสื่อสำหรับใช้ในการตลาด ถ้าต้องจ้างคนภายนอกทำเว็บไซต์บริษัทใหม่แบบครบถ้วน ผมประเมินว่าน่าจะมีค่าใช้จ่ายประมาณ 30,000–100,000 บาทขึ้นไป และงานกราฟิกหรือคอนเทนต์ต่างๆ อาจมีค่าใช้จ่ายเพิ่มอีกประมาณ 10,000–30,000 บาทต่อเดือน ... มูลค่าต้นทุนที่คาดว่าประหยัดได้รวมแล้วอยู่ในระดับหลักแสนบาทครับ ... ผมสามารถใช้ AI ช่วยทำงานประจำที่ต้องคัดลอกและวางตัวเลขลงในไฟล์ Excel ได้แบบอัตโนมัติ จากเดิมที่ต้องทำซ้ำทีละขั้นตอน ตอนนี้สามารถทำเสร็จได้ภายในไม่กี่วินาที ...</p>
+          </details>
+        </article>
+      </div>
+
+      <p class="proof-footnote">ผลลัพธ์เป็นประสบการณ์ของผู้เรียนแต่ละท่าน ขึ้นอยู่กับธุรกิจและการนำไปใช้ ไม่ใช่การรับประกันรายได้</p>
+      <!-- Optional: customer chat screenshots kept off-page for privacy. Do not publish LINE/FB chat images without written consent. -->
+    </div>
+  </section>
+
   <!-- 3. Monday before/after -->
   <section class="compare-section section" id="monday" aria-labelledby="monday-title">
     <div class="page-width">
@@ -374,7 +500,7 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
           <p class="eyebrow">01 / AFTER CLASS REALITY</p>
           <h2 id="monday-title">วันจันทร์หลังเรียน:<br>แบบเดิม vs แบบ Limitless</h2>
         </div>
-        <p>เป้าหมายไม่ใช่รู้จักเครื่องมือมากขึ้น แต่คือกลับไปทำงานได้ในสัปดาห์ถัดไป</p>
+        <p>ภาษาเดียวกับที่ผู้เรียนเคยเล่า — จากคอขวดและงาน manual ไปสู่ระบบที่ใช้ได้จริง</p>
       </div>
       <div class="compare-table" role="table" aria-label="เปรียบเทียบวันจันทร์หลังเรียน">
         <div class="compare-row compare-head" role="row">
@@ -384,37 +510,37 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
         <div class="compare-row" role="row">
           <div class="compare-cell before" role="cell">
             <span class="compare-label mobile-only">แบบเดิม</span>
-            <strong>รู้แล้วว่า AI ทำอะไรได้ แต่ยังไม่รู้จะเริ่มจากงานไหน</strong>
-            <p>เปิด ChatGPT แล้วติดที่ “จะพิมพ์อะไรดี” เพราะยังไม่มีบริบทธุรกิจและงานที่ชัด</p>
+            <strong>ใช้ AI แบบหางอึ่ง — ทำงาน manual คอขวดทุกแผนก</strong>
+            <p>รู้ว่ามีเครื่องมือ แต่ยังไม่มีวิธีใช้งานจริง สเกลไม่ได้ เพราะติดที่ทุกแผนก</p>
           </div>
           <div class="compare-cell after" role="cell">
             <span class="compare-label">แบบ Limitless</span>
-            <strong>มี Company Brain และงานที่เลือกไว้แล้ว</strong>
-            <p>AI รู้จักบริษัทคุณ และคุณรู้แล้วว่างานไหนควรให้มันช่วยก่อน</p>
+            <strong>เนื้อ ๆ ไม่มีน้ำ — คอขวดหาย เอามาสอนทีมต่อได้</strong>
+            <p>ถ่ายทอดแบบเน้นใช้งานได้เลย ผู้เรียนเอากลับไปถ่ายทอดให้พนักงานต่อได้ทันที</p>
           </div>
         </div>
         <div class="compare-row" role="row">
           <div class="compare-cell before" role="cell">
             <span class="compare-label mobile-only">แบบเดิม</span>
-            <strong>ได้ Prompt ตัวอย่าง แต่ต้องปรับเองจนท้อ</strong>
-            <p>ตัวอย่างสำเร็จรูปไม่ตรงสินค้า ลูกค้า และวิธีทำงานของบริษัท</p>
+            <strong>ปวดหัวบริหารคน — ไม่มีงบจ้างทีมเว็บ·กราฟิก·คอนเทนต์</strong>
+            <p>บริษัทเล็กอยากได้ระดับบริษัทใหญ่ แต่จ้างเอาต์ซอร์สทีละงานกินงบ</p>
           </div>
           <div class="compare-cell after" role="cell">
             <span class="compare-label">แบบ Limitless</span>
-            <strong>มีผู้ช่วย AI ที่สร้างจากโจทย์คุณในคลาส</strong>
-            <p>ลงมือบนโน้ตบุ๊ก พร้อมถามและแก้จุดติดกับโค้ชและทีมตอนเรียน</p>
+            <strong>สร้างระบบเองได้ ทั้งหน้าบ้านและหลังบ้าน</strong>
+            <p>เลือกและใช้ AI แต่ละประเภท — ทำเว็บ กราฟิก คอนเทนต์ และระบบงานเองได้</p>
           </div>
         </div>
         <div class="compare-row" role="row">
           <div class="compare-cell before" role="cell">
             <span class="compare-label mobile-only">แบบเดิม</span>
-            <strong>งานซ้ำยังอยู่ที่คน — AI ยังเป็นของเล่น</strong>
-            <p>รู้ชื่อเครื่องมือหลายตัว แต่ยังไม่ได้ต่อเป็นขั้นตอนที่ใช้ซ้ำได้</p>
+            <strong>ติดขัดเพราะไม่รู้ — สั่งของสะเปะสะปะ · copy-paste Excel</strong>
+            <p>อยากสร้างระบบแต่เสียเวลาศึกษาเอง หรืองานประจำซ้ำทีละขั้นจนช้า</p>
           </div>
           <div class="compare-cell after" role="cell">
             <span class="compare-label">แบบ Limitless</span>
-            <strong>มี Workflow ให้ AI ช่วยงานซ้ำ โดยคุณตรวจงาน</strong>
-            <p>โมเดล สั่งงาน 10 · AI ทำ 80 · คุณตรวจ 10 เพื่อให้ผลออกมาใช้ได้จริง</p>
+            <strong>มีระบบเฝ้างานซ้ำ — Excel เสร็จในไม่กี่วินาที</strong>
+            <p>ทำลายข้อจำกัดด้วยวิธีการ + ไอเดียที่ต่อยอดได้ งานประจำอัตโนมัติโดยคุณตรวจคุณภาพ</p>
           </div>
         </div>
       </div>
@@ -559,9 +685,9 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
         <article class="fit-card yes">
           <h3>เหมาะกับคุณ ถ้า…</h3>
           <ul>
-            <li>เป็นเจ้าของธุรกิจหรือผู้นำที่อยากให้ AI ช่วยงานจริง ไม่ใช่แค่ทดลองเล่น</li>
+            <li>เป็นเจ้าของธุรกิจหรือผู้นำที่เคยติดคอขวด / ใช้ AI แบบหางอึ่ง แล้วอยากให้ช่วยงานจริง</li>
             <li>พร้อมนำโน้ตบุ๊กและข้อมูลบริษัท (ที่มีสิทธิ์ใช้) มาลงมือในคลาส</li>
-            <li>อยากได้ระบบและ Workflow กลับไปใช้วันจันทร์ ไม่ใช่แค่สไลด์หรือ Prompt สำเร็จรูป</li>
+            <li>อยากสร้างระบบเองได้ — ไม่ใช่แค่สไลด์หรือ Prompt สำเร็จรูป</li>
             <li>โอเคกับการตรวจงานเอง — ให้ AI ทำส่วนกลาง คุณคุมคุณภาพ</li>
           </ul>
         </article>
@@ -612,12 +738,16 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
       </div>
       <div class="faq-list">
         <article class="faq-answer">
+          <h3>ต่างจากคอร์ส AI อื่นยังไง?</h3>
+          <p>ผู้เรียนบอกตรง ๆ ว่า “เนื้อ ๆ ไม่มีน้ำ” — ถ่ายทอดแบบเน้นใช้งานได้เลย ไม่ใช่รายชื่อเครื่องมือหรือ Prompt สำเร็จรูป ลงมือสร้างจากโจทย์บริษัทคุณในห้อง แล้วเอากลับไปสอนทีมต่อได้</p>
+        </article>
+        <article class="faq-answer">
           <h3>ไม่มีพื้นฐาน AI เรียนได้ไหม?</h3>
-          <p>เรียนได้ ไม่ต้องมีพื้นฐาน Tech เริ่มจากการพิมพ์แชตและโจทย์ธุรกิจจริง ทุกแพ็กเกจรวมพื้นฐานเพื่อวาง Company Brain แล้วเลือกสายระบบหรือ Content ตามงานที่อยากให้ AI ช่วย</p>
+          <p>เรียนได้ ไม่ต้องมีพื้นฐาน Tech หลายคนเริ่มจากใช้ AI แบบหางอึ่ง หรือติดขัดเพราะไม่รู้ — ในคลาสเริ่มจากโจทย์ธุรกิจจริง วาง Company Brain แล้วเลือกสายระบบหรือ Content ตามงานที่อยากให้ AI ช่วย</p>
         </article>
         <article class="faq-answer">
           <h3>ต้องเตรียมอะไรมาเรียน?</h3>
-          <p>เตรียมโน้ตบุ๊ก ข้อมูลบริษัทที่มีสิทธิ์นำมาใช้ เป้าหมาย ขั้นตอนงาน และโจทย์ที่อยากแก้ ทีมจะช่วยแนะนำเครื่องมือที่เหมาะกับคลาส</p>
+          <p>เตรียมโน้ตบุ๊ก ข้อมูลบริษัทที่มีสิทธิ์นำมาใช้ เป้าหมาย ขั้นตอนงาน และโจทย์ที่อยากแก้ (เช่น งาน manual ที่คอขวด / งานที่อยากสร้างระบบเอง) ทีมจะช่วยแนะนำเครื่องมือที่เหมาะกับคลาส</p>
         </article>
         <article class="faq-answer">
           <h3>เรียนวันไหน และที่ไหน?</h3>
@@ -625,11 +755,11 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
         </article>
         <article class="faq-answer">
           <h3>เรียนจบแล้วมีทีมช่วยต่อไหม?</h3>
-          <p>แพ็กเกจ Day 1–4 และ Day 1–6 มีคลาสออนไลน์และ Founder Community 1 ปี พร้อม Online Implementation Q&amp;A สัปดาห์ละ 2 ครั้ง สิทธิ์ของแพ็กเกจเริ่มต้นแตกต่างกัน</p>
+          <p>แพ็กเกจ Day 1–4 และ Day 1–6 มีคลาสออนไลน์และ Founder Community 1 ปี พร้อม Online Implementation Q&amp;A สัปดาห์ละ 2 ครั้ง สิทธิ์ของแพ็กเกจเริ่มต้นแตกต่างกัน — บางท่านส่งพนักงานมาเรียนเพิ่มหลังเอาระบบไปใช้แล้ว</p>
         </article>
         <article class="faq-answer">
           <h3>มีค่าใช้จ่ายอื่น หรือรับประกันรายได้ไหม?</h3>
-          <p>ค่าเรียนไม่รวม Subscription ของเครื่องมือ AI ที่เลือกใช้ และไม่มีการรับประกันรายได้หรือยอดประหยัด ผลขึ้นอยู่กับข้อมูล ธุรกิจ ทีม และการนำไปใช้จริง สอบถามยอดชำระและเงื่อนไขกับทีมก่อนตัดสินใจ</p>
+          <p>ค่าเรียนไม่รวม Subscription ของเครื่องมือ AI ที่เลือกใช้ และไม่มีการรับประกันรายได้หรือยอดประหยัด ตัวเลขบนหน้านี้เป็นประสบการณ์ที่ผู้เรียนแต่ละท่านเล่าเอง ผลขึ้นอยู่กับธุรกิจและการนำไปใช้ สอบถามยอดชำระและเงื่อนไขกับทีมก่อนตัดสินใจ</p>
         </article>
       </div>
     </div>
@@ -640,8 +770,8 @@ dialog::backdrop{background:rgba(16,29,56,.55)}
     <div class="page-width final-inner">
       <div>
         <p class="eyebrow">YOUR BUSINESS. YOUR NEXT MONDAY.</p>
-        <h2 id="cta-title">วันจันทร์หน้า<br>ให้ AI เริ่มทำงานแทนคุณ</h2>
-        <p>เลือกแพ็กเกจเดียวตามเป้าหมาย · เริ่ม ฿23,800 · หรือเริ่มวันแรก ฿9,900</p>
+        <h2 id="cta-title">เลิกใช้ AI แบบหางอึ่ง<br>ให้คอขวดเริ่มหายจากวันจันทร์นี้</h2>
+        <p>เนื้อ ๆ ไม่มีน้ำ · ลงมือสร้างจากงานจริง · แพ็กเกจ 2 วัน ฿23,800 · หรือเริ่มวันแรก ฿9,900</p>
       </div>
       <a class="button light" href="https://line.me/R/ti/p/@JEDITRINUPAB" target="_blank" rel="noopener noreferrer">ยืนยันที่นั่งทาง LINE<span aria-hidden="true">↗</span></a>
     </div>
